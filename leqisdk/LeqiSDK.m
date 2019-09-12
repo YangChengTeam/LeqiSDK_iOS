@@ -18,6 +18,7 @@
 #import "IAPViewController.h"
 #import "HomeViewController.h"
 #import "MeNavViewController.h"
+#import "AutoLoginViewController.h"
 #import "Base64.h"
 
 #define FIRST_LOGIN @"first_login"
@@ -97,6 +98,7 @@ static LeqiSDK* instance = nil;
 
     HomeViewController *vc = [[HomeViewController alloc] initWithStoryboardID:@"HomeViewController"];
     STPopupController *popupController = [[STPopupController alloc] initWithRootViewController:vc];
+    popupController.navigationBar.tintColor = kColorWithHex(0xF9628B);
     popupController.containerView.layer.cornerRadius = 4;
     [popupController presentInViewController:[BaseViewController  getCurrentViewController]];
 }
@@ -122,6 +124,7 @@ static LeqiSDK* instance = nil;
             
             HomeViewController *vc = [[HomeViewController alloc] initWithStoryboardID:@"HomeViewController"];
             STPopupController *popupController = [[STPopupController alloc] initWithRootViewController:vc];
+            popupController.navigationBar.tintColor = kColorWithHex(0xF9628B);
             popupController.containerView.layer.cornerRadius = 4;
             [popupController presentInViewController:[BaseViewController  getCurrentViewController]];
            
@@ -145,6 +148,7 @@ static LeqiSDK* instance = nil;
 - (void)openNormalLogin {
     HomeViewController *vc = [[HomeViewController alloc] initWithStoryboardID:@"HomeViewController"];
     STPopupController *popupController = [[STPopupController alloc] initWithRootViewController:vc];
+    popupController.navigationBar.tintColor = kColorWithHex(0xF9628B);
     popupController.containerView.layer.cornerRadius = 4;
     [popupController presentInViewController:[BaseViewController  getCurrentViewController]];
 }
@@ -152,31 +156,31 @@ static LeqiSDK* instance = nil;
 #pragma mark -- 登录
 - (int)login {
 
-//    if(self.user){
-//        return LEQI_SDK_ERROR_ALREADY_LOGIN;  //已经登录
-//    }
-//    if(!isInitOk){
-//        isReInit = YES;
-//        [self initWithConfig: self.configInfo];
-//        return LEQI_SDK_ERROR_INIT_FAILED; //初始化失败
-//    }
-//
-//    BOOL isAutoLogin = [[CacheHelper shareInstance] getAutoLogin];
-//    if(isAutoLogin){
-//        NSLog(@"%@:%@", TAG, @"auto login");
+    if(self.user){
+        return LEQI_SDK_ERROR_ALREADY_LOGIN;  //已经登录
+    }
+    if(!isInitOk){
+        isReInit = YES;
+        [self initWithConfig: self.configInfo];
+        return LEQI_SDK_ERROR_INIT_FAILED; //初始化失败
+    }
+
+    BOOL isAutoLogin = [[CacheHelper shareInstance] getAutoLogin];
+    if(isAutoLogin){
+        NSLog(@"%@:%@", TAG, @"auto login");
         [self openAutoLogin];
-//        return LEQI_SDK_ERROR_NONE;
-//    }
-//
-//    NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
-//    BOOL isNotFirstLogin = [defaults boolForKey:FIRST_LOGIN];
-//    if(!isNotFirstLogin){
-//        NSLog(@"%@:%@", TAG, @"quick login");
-//        [self openQuickLogin];
-//    } else {
-//        NSLog(@"%@:%@", TAG, @"normal login");
-//        [self openNormalLogin];
-//    }
+        return LEQI_SDK_ERROR_NONE;
+    }
+
+    NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
+    BOOL isNotFirstLogin = [defaults boolForKey:FIRST_LOGIN];
+    if(!isNotFirstLogin){
+        NSLog(@"%@:%@", TAG, @"quick login");
+        [self openQuickLogin];
+    } else {
+        NSLog(@"%@:%@", TAG, @"normal login");
+        [self openNormalLogin];
+    }
     
     return LEQI_SDK_ERROR_NONE;
 }
