@@ -11,6 +11,7 @@
 #import "ForgotPasswordViewController.h"
 #import "MsgLoginViewController.h"
 #import "MsgRegistViewController.h"
+#import "AutoLoginViewController.h"
 
 @interface HomeViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -43,6 +44,11 @@
     [self setViewHieght: 270];
     phoneField.text = self.getUserName;
     pwdField.text = self.getPassword;
+}
+
+- (IBAction)sercetAction:(UIButton *)bt {
+    [bt setSelected: !bt.isSelected];
+    [pwdField setSecureTextEntry:!bt.selected];
 }
 
 - (IBAction)downAction:(UIButton *)bt {
@@ -80,6 +86,11 @@
     }
     [self show:@"登录中..."];
     [self loginWithAccount:username password:password];
+}
+
+- (IBAction)newLoginAction:(UIButton *)bt {
+    AutoLoginViewController *vc = [[AutoLoginViewController alloc] initWithStoryboardID:@"AutoLoginViewController"];
+    [self.popupController pushViewController:vc animated:YES];
 }
 
 - (IBAction)msgLoginAction:(UIButton *)bt {

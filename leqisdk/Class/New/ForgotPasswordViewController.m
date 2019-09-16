@@ -24,7 +24,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"忘记密码";
-    [self setViewHieght:200];
+    [self setViewHieght:250];
     
 }
 
