@@ -177,6 +177,14 @@
 		4556C320231F5B3D00FD5F26 /* UserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4556C31E231F5B3D00FD5F26 /* UserCell.m */; };
 		456CA1D02329F48400530975 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 456CA1CF2329F48400530975 /* Media.xcassets */; };
 		456CA1D12329F48400530975 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 456CA1CF2329F48400530975 /* Media.xcassets */; };
+		456CA1DD232F681D00530975 /* CustomerServerViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 456CA1DB232F681D00530975 /* CustomerServerViewController.h */; };
+		456CA1DE232F681D00530975 /* CustomerServerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 456CA1DC232F681D00530975 /* CustomerServerViewController.m */; };
+		456CA1E1232F6E7400530975 /* CustomerServerContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 456CA1DF232F6E7400530975 /* CustomerServerContainer.h */; };
+		456CA1E2232F6E7400530975 /* CustomerServerContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 456CA1E0232F6E7400530975 /* CustomerServerContainer.m */; };
+		456CA1E5232F77A600530975 /* FeedbackContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 456CA1E3232F77A600530975 /* FeedbackContainer.h */; };
+		456CA1E6232F77A600530975 /* FeedbackContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 456CA1E4232F77A600530975 /* FeedbackContainer.m */; };
+		456CA1E9232F77C100530975 /* FeedbackViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 456CA1E7232F77C100530975 /* FeedbackViewController.h */; };
+		456CA1EA232F77C100530975 /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 456CA1E8232F77C100530975 /* FeedbackViewController.m */; };
 		45D0963B231F633A004B539C /* MsgLoginViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 45D09639231F633A004B539C /* MsgLoginViewController.h */; };
 		45D0963C231F633A004B539C /* MsgLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D0963A231F633A004B539C /* MsgLoginViewController.m */; };
 		45D0963F231F634F004B539C /* MsgRegistViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 45D0963D231F634F004B539C /* MsgRegistViewController.h */; };
@@ -366,6 +374,14 @@
 		4556C31D231F5B3D00FD5F26 /* UserCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserCell.h; sourceTree = "<group>"; };
 		4556C31E231F5B3D00FD5F26 /* UserCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserCell.m; sourceTree = "<group>"; };
 		456CA1CF2329F48400530975 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		456CA1DB232F681D00530975 /* CustomerServerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomerServerViewController.h; sourceTree = "<group>"; };
+		456CA1DC232F681D00530975 /* CustomerServerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomerServerViewController.m; sourceTree = "<group>"; };
+		456CA1DF232F6E7400530975 /* CustomerServerContainer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomerServerContainer.h; sourceTree = "<group>"; };
+		456CA1E0232F6E7400530975 /* CustomerServerContainer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomerServerContainer.m; sourceTree = "<group>"; };
+		456CA1E3232F77A600530975 /* FeedbackContainer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedbackContainer.h; sourceTree = "<group>"; };
+		456CA1E4232F77A600530975 /* FeedbackContainer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedbackContainer.m; sourceTree = "<group>"; };
+		456CA1E7232F77C100530975 /* FeedbackViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedbackViewController.h; sourceTree = "<group>"; };
+		456CA1E8232F77C100530975 /* FeedbackViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
 		45D09639231F633A004B539C /* MsgLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MsgLoginViewController.h; sourceTree = "<group>"; };
 		45D0963A231F633A004B539C /* MsgLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MsgLoginViewController.m; sourceTree = "<group>"; };
 		45D0963D231F634F004B539C /* MsgRegistViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MsgRegistViewController.h; sourceTree = "<group>"; };
@@ -696,6 +712,14 @@
 				4556C2BE231F47CC00FD5F26 /* IAPViewController.m */,
 				4556C2C4231F47CD00FD5F26 /* AgreementViewController.h */,
 				4556C2D4231F47CE00FD5F26 /* AgreementViewController.m */,
+				456CA1DB232F681D00530975 /* CustomerServerViewController.h */,
+				456CA1DC232F681D00530975 /* CustomerServerViewController.m */,
+				456CA1DF232F6E7400530975 /* CustomerServerContainer.h */,
+				456CA1E0232F6E7400530975 /* CustomerServerContainer.m */,
+				456CA1E7232F77C100530975 /* FeedbackViewController.h */,
+				456CA1E8232F77C100530975 /* FeedbackViewController.m */,
+				456CA1E3232F77A600530975 /* FeedbackContainer.h */,
+				456CA1E4232F77A600530975 /* FeedbackContainer.m */,
 			);
 			path = New;
 			sourceTree = "<group>";
@@ -731,6 +755,7 @@
 				4556C29E231F474900FD5F26 /* STPopup.h in Headers */,
 				4556C2F3231F47CF00FD5F26 /* QQViewController.h in Headers */,
 				4556C2E1231F47CF00FD5F26 /* BaseViewController.h in Headers */,
+				456CA1DD232F681D00530975 /* CustomerServerViewController.h in Headers */,
 				45D0963F231F634F004B539C /* MsgRegistViewController.h in Headers */,
 				4556C1F3231F433B00FD5F26 /* LeqiSDK.h in Headers */,
 				4556C1E5231F430700FD5F26 /* AFNetworking.h in Headers */,
@@ -744,6 +769,7 @@
 				45D0963B231F633A004B539C /* MsgLoginViewController.h in Headers */,
 				4556C1F8231F434500FD5F26 /* LeqiSDKOrderInfo.h in Headers */,
 				4556C1EC231F430700FD5F26 /* RSA.h in Headers */,
+				456CA1E5232F77A600530975 /* FeedbackContainer.h in Headers */,
 				4556C2A8231F474900FD5F26 /* STPopupControllerTransitioningFade.h in Headers */,
 				4556C2B7231F474900FD5F26 /* MBProgressHUD.h in Headers */,
 				4556C2E5231F47CF00FD5F26 /* MenuTableViewCell.h in Headers */,
@@ -753,6 +779,7 @@
 				4556C2EA231F47CF00FD5F26 /* AgreementViewController.h in Headers */,
 				4556C1DF231F430700FD5F26 /* AFURLRequestSerialization.h in Headers */,
 				4556C2FC231F47CF00FD5F26 /* BindPhoneViewController.h in Headers */,
+				456CA1E9232F77C100530975 /* FeedbackViewController.h in Headers */,
 				4556C1ED231F430700FD5F26 /* NSData+GZIP.h in Headers */,
 				4556C2AF231F474900FD5F26 /* XHFloatWindow.h in Headers */,
 				4556C1DE231F430700FD5F26 /* AFURLSessionManager.h in Headers */,
@@ -789,6 +816,7 @@
 				4556C1C2231F42DA00FD5F26 /* CacheHelper.h in Headers */,
 				4556C1DC231F430700FD5F26 /* AFSecurityPolicy.h in Headers */,
 				4556C2A6231F474900FD5F26 /* STPopupNavigationBar.h in Headers */,
+				456CA1E1232F6E7400530975 /* CustomerServerContainer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1017,6 +1045,7 @@
 				4556C315231F510C00FD5F26 /* MeNavViewController.m in Sources */,
 				4556C2FA231F47CF00FD5F26 /* AgreementViewController.m in Sources */,
 				4556C30C231F4D6700FD5F26 /* UIView+MBIBnspectable.m in Sources */,
+				456CA1E6232F77A600530975 /* FeedbackContainer.m in Sources */,
 				4556C1E0231F430700FD5F26 /* AFURLResponseSerialization.m in Sources */,
 				4556C304231F47CF00FD5F26 /* UnBindPhoneViewController.m in Sources */,
 				4556C1EB231F430700FD5F26 /* RSA.m in Sources */,
@@ -1027,14 +1056,17 @@
 				4556C1EE231F430700FD5F26 /* NSData+GZIP.m in Sources */,
 				4556C320231F5B3D00FD5F26 /* UserCell.m in Sources */,
 				4556C1E7231F430700FD5F26 /* AFSecurityPolicy.m in Sources */,
+				456CA1E2232F6E7400530975 /* CustomerServerContainer.m in Sources */,
 				4556C2A3231F474900FD5F26 /* STPopupControllerTransitioningFade.m in Sources */,
 				4556C2B6231F474900FD5F26 /* MBProgressHUD.m in Sources */,
 				4556C1FA231F434500FD5F26 /* LeqiSDKInitConfigure.m in Sources */,
 				4556C1EA231F430700FD5F26 /* EncrytUtils.m in Sources */,
 				4556C2A1231F474900FD5F26 /* STPopupLeftBarItem.m in Sources */,
+				456CA1DE232F681D00530975 /* CustomerServerViewController.m in Sources */,
 				45D09644231F63C8004B539C /* MeTableViewController.m in Sources */,
 				4556C2AD231F474900FD5F26 /* XHFloatWindowSingleton.m in Sources */,
 				4556C29D231F474900FD5F26 /* STPopupControllerTransitioningSlideVertical.m in Sources */,
+				456CA1EA232F77C100530975 /* FeedbackViewController.m in Sources */,
 				4556C1EF231F430700FD5F26 /* NetUtils.m in Sources */,
 				4556C2A5231F474900FD5F26 /* UIResponder+STPopup.m in Sources */,
 				45D09648231F63DE004B539C /* MeModifyPwdViewController.m in Sources */,
@@ -1198,7 +1230,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2SLQA6DUGY;
+				DEVELOPMENT_TEAM = 9VT6JCVVLC;
 				INFOPLIST_FILE = LeqiSDK_iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1206,7 +1238,7 @@
 					"@executable_path/Frameworks",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.lqtem.LeqiSDK-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.touming.LeqiSDK-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1217,7 +1249,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2SLQA6DUGY;
+				DEVELOPMENT_TEAM = 9VT6JCVVLC;
 				INFOPLIST_FILE = LeqiSDK_iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1225,7 +1257,7 @@
 					"@executable_path/Frameworks",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.lqtem.LeqiSDK-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.touming.LeqiSDK-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

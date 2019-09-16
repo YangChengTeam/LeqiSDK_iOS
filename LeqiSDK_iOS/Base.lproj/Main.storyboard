@@ -18,22 +18,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L2d-Ms-AMb">
-                                <rect key="frame" x="176" y="433" width="62" height="30"/>
-                                <state key="normal" title="模拟登录"/>
-                                <connections>
-                                    <action selector="loginAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="1J5-61-4Ce"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Nm-b2-Dxb">
-                                <rect key="frame" x="176" y="479" width="62" height="30"/>
-                                <state key="normal" title="模拟支付"/>
+                                <rect key="frame" x="147" y="484" width="120" height="40"/>
+                                <color key="backgroundColor" cyan="0.0" magenta="0.0" yellow="0.0" black="1" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="P0W-gZ-X11"/>
+                                    <constraint firstAttribute="width" constant="120" id="jri-JF-gNE"/>
+                                </constraints>
+                                <state key="normal" title="模拟支付">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="payAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="3jP-F5-lgs"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L2d-Ms-AMb">
+                                <rect key="frame" x="147" y="428" width="120" height="40"/>
+                                <color key="backgroundColor" cyan="0.0" magenta="0.0" yellow="0.0" black="1" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="6vm-fk-04C"/>
+                                    <constraint firstAttribute="width" constant="120" id="mnx-OO-yw0"/>
+                                </constraints>
+                                <state key="normal" title="模拟登录">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="1J5-61-4Ce"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.45085787770000002" green="0.98829740290000001" blue="0.83763033149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="L2d-Ms-AMb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KuE-9s-gbj"/>
                             <constraint firstItem="L2d-Ms-AMb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Z3h-ea-j7F"/>
@@ -45,6 +59,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="47.826086956521742" y="20.758928571428569"/>
         </scene>
     </scenes>
 </document>

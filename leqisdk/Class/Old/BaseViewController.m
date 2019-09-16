@@ -24,11 +24,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor clearColor];
     [STPopupNavigationBar appearance].barTintColor = [UIColor whiteColor];
-    [STPopupNavigationBar appearance].tintColor = kColorWithHex(0xF9628B);
+    [STPopupNavigationBar appearance].tintColor = kColorWithHex(0x000000);
     [STPopupNavigationBar appearance].clipsToBounds = YES;
-    [STPopupNavigationBar appearance].titleTextAttributes = @{ NSFontAttributeName: [UIFont fontWithName:@"Cochin" size:16], NSForegroundColorAttributeName:  kColorWithHex(0x666666) };
+    [STPopupNavigationBar appearance].titleTextAttributes = @{ NSFontAttributeName: [UIFont fontWithName:@"Cochin" size:16], NSForegroundColorAttributeName:  kColorWithHex(0x000000) };
     self.popupController.navigationBar.draggable = NO;    
 }
 

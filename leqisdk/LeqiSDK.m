@@ -20,6 +20,8 @@
 #import "MeNavViewController.h"
 #import "AutoLoginViewController.h"
 #import "Base64.h"
+#import "CustomerServerViewController.h"
+
 
 #define FIRST_LOGIN @"first_login"
 #define IC_EE @"WJPFH/vgAho7klpeiK8TPKrN9D7NAS14Zf87PV/KLuKJZfJbNE8BsEvvxttuPDacyK8iQfeC6VoVvUIt1WAFHjJeaESNh5qAQOdvvC3C3P8Fe0J4LA8NVeKj7hVU9xvnykJr8ICV7bSenVQExr5g+OWLNjsYPxfuqUEqEVj36Eg="
@@ -98,7 +100,8 @@ static LeqiSDK* instance = nil;
 
     HomeViewController *vc = [[HomeViewController alloc] initWithStoryboardID:@"HomeViewController"];
     STPopupController *popupController = [[STPopupController alloc] initWithRootViewController:vc];
-    popupController.navigationBar.tintColor = kColorWithHex(0xF9628B);
+    popupController.navigationBar.tintColor = kColorWithHex(0xffffff);
+    popupController.navigationBar.titleTextAttributes = @{ NSFontAttributeName: [UIFont fontWithName:@"Cochin" size:16], NSForegroundColorAttributeName:  kColorWithHex(0x000000) };
     popupController.containerView.layer.cornerRadius = 4;
     [popupController presentInViewController:[BaseViewController  getCurrentViewController]];
 }
@@ -124,7 +127,8 @@ static LeqiSDK* instance = nil;
             
             HomeViewController *vc = [[HomeViewController alloc] initWithStoryboardID:@"HomeViewController"];
             STPopupController *popupController = [[STPopupController alloc] initWithRootViewController:vc];
-            popupController.navigationBar.tintColor = kColorWithHex(0xF9628B);
+            popupController.navigationBar.tintColor = kColorWithHex(0xffffff);
+            popupController.navigationBar.titleTextAttributes = @{ NSFontAttributeName: [UIFont fontWithName:@"Cochin" size:16], NSForegroundColorAttributeName:  kColorWithHex(0x000000) };
             popupController.containerView.layer.cornerRadius = 4;
             [popupController presentInViewController:[BaseViewController  getCurrentViewController]];
            
@@ -148,7 +152,8 @@ static LeqiSDK* instance = nil;
 - (void)openNormalLogin {
     HomeViewController *vc = [[HomeViewController alloc] initWithStoryboardID:@"HomeViewController"];
     STPopupController *popupController = [[STPopupController alloc] initWithRootViewController:vc];
-    popupController.navigationBar.tintColor = kColorWithHex(0xF9628B);
+    popupController.navigationBar.tintColor = kColorWithHex(0xffffff);
+    popupController.navigationBar.titleTextAttributes = @{ NSFontAttributeName: [UIFont fontWithName:@"Cochin" size:16], NSForegroundColorAttributeName:  kColorWithHex(0x000000) };
     popupController.containerView.layer.cornerRadius = 4;
     [popupController presentInViewController:[BaseViewController  getCurrentViewController]];
 }
@@ -244,8 +249,8 @@ static LeqiSDK* instance = nil;
     if(!isFloatViewAdded){
        [XHFloatWindow xh_addWindowOnTarget:[BaseViewController getCurrentViewController] onClick:^{
 
-           MeNavViewController *nav = [[MeNavViewController alloc] initWithStoryboard];
-           [[BaseViewController getCurrentViewController] presentViewController:nav animated:true completion:nil];
+           CustomerServerViewController *nav = [[CustomerServerViewController alloc] initWithStoryboardID:@"CustomerServerViewController"];
+           [[BaseViewController getCurrentViewController] presentViewController:nav animated:NO completion:nil];
        }];
     } else {
         [XHFloatWindow xh_setHideWindow:NO];
