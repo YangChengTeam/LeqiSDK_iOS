@@ -18,6 +18,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" image="IMG_0001" translatesAutoresizingMaskIntoConstraints="NO" id="DAu-so-vfY">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Nm-b2-Dxb">
                                 <rect key="frame" x="147" y="484" width="120" height="40"/>
                                 <color key="backgroundColor" cyan="0.0" magenta="0.0" yellow="0.0" black="1" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
@@ -49,10 +52,14 @@
                         </subviews>
                         <color key="backgroundColor" red="0.45085787770000002" green="0.98829740290000001" blue="0.83763033149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="DAu-so-vfY" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="By2-9a-eqP"/>
+                            <constraint firstAttribute="bottom" secondItem="DAu-so-vfY" secondAttribute="bottom" id="DSN-9X-PfH"/>
                             <constraint firstItem="L2d-Ms-AMb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KuE-9s-gbj"/>
+                            <constraint firstAttribute="trailing" secondItem="DAu-so-vfY" secondAttribute="trailing" id="M85-4e-vNp"/>
                             <constraint firstItem="L2d-Ms-AMb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Z3h-ea-j7F"/>
                             <constraint firstItem="2Nm-b2-Dxb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gjt-fk-5uQ"/>
                             <constraint firstItem="2Nm-b2-Dxb" firstAttribute="top" secondItem="L2d-Ms-AMb" secondAttribute="bottom" constant="16" id="ul9-rZ-oOS"/>
+                            <constraint firstItem="DAu-so-vfY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="uwI-q7-dyw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -62,4 +69,7 @@
             <point key="canvasLocation" x="47.826086956521742" y="20.758928571428569"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="IMG_0001" width="562.5" height="1218"/>
+    </resources>
 </document>

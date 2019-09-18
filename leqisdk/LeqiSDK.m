@@ -102,7 +102,9 @@ static LeqiSDK* instance = nil;
     STPopupController *popupController = [[STPopupController alloc] initWithRootViewController:vc];
     popupController.navigationBar.tintColor = kColorWithHex(0xffffff);
     popupController.navigationBar.titleTextAttributes = @{ NSFontAttributeName: [UIFont fontWithName:@"Cochin" size:16], NSForegroundColorAttributeName:  kColorWithHex(0x000000) };
-    popupController.containerView.layer.cornerRadius = 4;
+//    popupController.containerView.layer.cornerRadius = 4;
+//    popupController.containerView.layer.borderColor = [[UIColor colorWithRed:0 green:0 blue:0 alpha:0.3] CGColor];
+//    popupController.containerView.layer.borderWidth = 10;
     [popupController presentInViewController:[BaseViewController  getCurrentViewController]];
 }
 
@@ -129,7 +131,9 @@ static LeqiSDK* instance = nil;
             STPopupController *popupController = [[STPopupController alloc] initWithRootViewController:vc];
             popupController.navigationBar.tintColor = kColorWithHex(0xffffff);
             popupController.navigationBar.titleTextAttributes = @{ NSFontAttributeName: [UIFont fontWithName:@"Cochin" size:16], NSForegroundColorAttributeName:  kColorWithHex(0x000000) };
-            popupController.containerView.layer.cornerRadius = 4;
+//            popupController.containerView.layer.cornerRadius = 4;
+//            popupController.containerView.layer.borderColor = [[[UIColor blackColor] colorWithAlphaComponent:0.3] CGColor];
+//            popupController.containerView.layer.borderWidth = 10;
             [popupController presentInViewController:[BaseViewController  getCurrentViewController]];
            
             AutoLoginViewController *vc2 = [[AutoLoginViewController alloc] initWithStoryboardID:@"AutoLoginViewController"];
@@ -154,7 +158,9 @@ static LeqiSDK* instance = nil;
     STPopupController *popupController = [[STPopupController alloc] initWithRootViewController:vc];
     popupController.navigationBar.tintColor = kColorWithHex(0xffffff);
     popupController.navigationBar.titleTextAttributes = @{ NSFontAttributeName: [UIFont fontWithName:@"Cochin" size:16], NSForegroundColorAttributeName:  kColorWithHex(0x000000) };
-    popupController.containerView.layer.cornerRadius = 4;
+//    popupController.containerView.layer.cornerRadius = 4;
+//    popupController.containerView.layer.borderColor = [[UIColor colorWithRed:0 green:0 blue:0 alpha:0.3] CGColor];
+//    popupController.containerView.layer.borderWidth = 10;
     [popupController presentInViewController:[BaseViewController  getCurrentViewController]];
 }
 
