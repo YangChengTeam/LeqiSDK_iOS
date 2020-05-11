@@ -48,7 +48,6 @@
 		4556C1EE231F430700FD5F26 /* NSData+GZIP.m in Sources */ = {isa = PBXBuildFile; fileRef = 4556C1D9231F430700FD5F26 /* NSData+GZIP.m */; };
 		4556C1EF231F430700FD5F26 /* NetUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4556C1DA231F430700FD5F26 /* NetUtils.m */; };
 		4556C1F2231F433B00FD5F26 /* LeqiSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 4556C1F0231F433B00FD5F26 /* LeqiSDK.m */; };
-		4556C1F3231F433B00FD5F26 /* LeqiSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 4556C1F1231F433B00FD5F26 /* LeqiSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4556C1F8231F434500FD5F26 /* LeqiSDKOrderInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 4556C1F4231F434500FD5F26 /* LeqiSDKOrderInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4556C1F9231F434500FD5F26 /* LeqiSDKOrderInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4556C1F5231F434500FD5F26 /* LeqiSDKOrderInfo.m */; };
 		4556C1FA231F434500FD5F26 /* LeqiSDKInitConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 4556C1F6231F434500FD5F26 /* LeqiSDKInitConfigure.m */; };
@@ -189,6 +188,7 @@
 		45D0964C231F63F3004B539C /* MeBindPhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D0964A231F63F3004B539C /* MeBindPhoneViewController.m */; };
 		45D0964F231F6405004B539C /* MeAuthViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 45D0964D231F6405004B539C /* MeAuthViewController.h */; };
 		45D09650231F6405004B539C /* MeAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D0964E231F6405004B539C /* MeAuthViewController.m */; };
+		7B44F06A2469375F0077A77F /* leqisdk.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B44F0692469375F0077A77F /* leqisdk.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -263,7 +263,6 @@
 		4556C1D9231F430700FD5F26 /* NSData+GZIP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+GZIP.m"; sourceTree = "<group>"; };
 		4556C1DA231F430700FD5F26 /* NetUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetUtils.m; sourceTree = "<group>"; };
 		4556C1F0231F433B00FD5F26 /* LeqiSDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeqiSDK.m; sourceTree = "<group>"; };
-		4556C1F1231F433B00FD5F26 /* LeqiSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeqiSDK.h; path = ../../../Documents/iossdk/leqisdk/leqisdk/core/LeqiSDK.h; sourceTree = "<group>"; };
 		4556C1F4231F434500FD5F26 /* LeqiSDKOrderInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeqiSDKOrderInfo.h; sourceTree = "<group>"; };
 		4556C1F5231F434500FD5F26 /* LeqiSDKOrderInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeqiSDKOrderInfo.m; sourceTree = "<group>"; };
 		4556C1F6231F434500FD5F26 /* LeqiSDKInitConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeqiSDKInitConfigure.m; sourceTree = "<group>"; };
@@ -378,6 +377,7 @@
 		45D0964A231F63F3004B539C /* MeBindPhoneViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeBindPhoneViewController.m; sourceTree = "<group>"; };
 		45D0964D231F6405004B539C /* MeAuthViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeAuthViewController.h; sourceTree = "<group>"; };
 		45D0964E231F6405004B539C /* MeAuthViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeAuthViewController.m; sourceTree = "<group>"; };
+		7B44F0692469375F0077A77F /* leqisdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = leqisdk.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -449,7 +449,7 @@
 		4556C18C231F3E0000FD5F26 /* leqisdk */ = {
 			isa = PBXGroup;
 			children = (
-				4556C1F1231F433B00FD5F26 /* LeqiSDK.h */,
+				7B44F0692469375F0077A77F /* leqisdk.h */,
 				4556C1F0231F433B00FD5F26 /* LeqiSDK.m */,
 				4556C1F7231F434500FD5F26 /* LeqiSDKInitConfigure.h */,
 				4556C1F6231F434500FD5F26 /* LeqiSDKInitConfigure.m */,
@@ -732,7 +732,6 @@
 				4556C2F3231F47CF00FD5F26 /* QQViewController.h in Headers */,
 				4556C2E1231F47CF00FD5F26 /* BaseViewController.h in Headers */,
 				45D0963F231F634F004B539C /* MsgRegistViewController.h in Headers */,
-				4556C1F3231F433B00FD5F26 /* LeqiSDK.h in Headers */,
 				4556C1E5231F430700FD5F26 /* AFNetworking.h in Headers */,
 				4556C31F231F5B3D00FD5F26 /* UserCell.h in Headers */,
 				4556C303231F47CF00FD5F26 /* IAPViewController.h in Headers */,
@@ -760,6 +759,7 @@
 				4556C2B1231F474900FD5F26 /* XHFloatWindowSingleton.h in Headers */,
 				4556C2F5231F47CF00FD5F26 /* UIAlertView+Block.h in Headers */,
 				4556C2FF231F47CF00FD5F26 /* LoginViewController.h in Headers */,
+				7B44F06A2469375F0077A77F /* leqisdk.h in Headers */,
 				45D09643231F63C8004B539C /* MeTableViewController.h in Headers */,
 				45D0964B231F63F3004B539C /* MeBindPhoneViewController.h in Headers */,
 				4556C1DD231F430700FD5F26 /* AFNetworkReachabilityManager.h in Headers */,
@@ -1198,7 +1198,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MY93VV26MT;
+				DEVELOPMENT_TEAM = HJQQYZ4D7S;
 				INFOPLIST_FILE = LeqiSDK_iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1217,7 +1217,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MY93VV26MT;
+				DEVELOPMENT_TEAM = HJQQYZ4D7S;
 				INFOPLIST_FILE = LeqiSDK_iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
