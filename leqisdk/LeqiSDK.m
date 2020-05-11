@@ -270,7 +270,7 @@ static LeqiSDK* instance = nil;
 
 #pragma mark -- SDK版本号
 - (NSString *)getVersion {
-    return @"1.0.97";
+    return @"1.1.0";
 }
 
 #pragma mark -- 退出

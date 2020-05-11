@@ -120,7 +120,7 @@
     NSAttributedString *attrStr = [[NSAttributedString alloc] initWithString:string attributes:attrs];
 
     UIColor *color2 = kColorWithHex(0xeba94c);
-    NSString *string2 = @"《乐七用户注册协议》";
+    NSString *string2 = @"《用户协议》";
     NSDictionary *attrs2 = @{ NSForegroundColorAttributeName : color2 };
     NSAttributedString *attrStr2 = [[NSAttributedString alloc] initWithString:string2 attributes:attrs2];
 

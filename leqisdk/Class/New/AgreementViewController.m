@@ -7,20 +7,22 @@
 //
 
 #import "AgreementViewController.h"
+#import <WebKit/WebKit.h>
+#import <WebKit/WKWebView.h>
 
 @interface AgreementViewController ()
 
 @end
 
 @implementation AgreementViewController {
-    UIWebView *_webView;
+    WKWebView *_webView;
     NSString *filePath;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"乐七用户注册协议";
+    self.title = @"用户协议";
     if(IsPortrait){
         [self setViewHieght: 400];
     } else {
@@ -32,7 +34,7 @@
     NSString *htmlString = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:&error];
     if (error)
         NSLog(@"Error reading file: %@", error.localizedDescription);
-    _webView = [[UIWebView alloc] init];
+    _webView = [[WKWebView alloc] init];
     [_webView loadHTMLString:htmlString baseURL:nil];
 
     [self.view addSubview:_webView];
@@ -44,16 +46,5 @@
     [super viewDidLayoutSubviews];
     _webView.frame = self.view.bounds;
 }
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

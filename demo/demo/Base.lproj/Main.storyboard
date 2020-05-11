@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LSG-kW-q1Z">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="kh7-qm-GsL">
+            <objects>
+                <viewController id="LSG-kW-q1Z" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="x4J-fa-t6A">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e9o-2c-Gtz">
+                                <rect key="frame" x="123.5" y="433" width="167" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="167" id="4gP-rr-in8"/>
+                                    <constraint firstAttribute="height" constant="40" id="d8B-hC-Nki"/>
+                                </constraints>
+                                <state key="normal" title="模拟登录">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9CQ-ig-vH1">
+                                <rect key="frame" x="123.5" y="500" width="167" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="2ZM-ci-In9"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="167" id="Odl-Nq-Maz"/>
+                                    <constraint firstAttribute="width" constant="167" id="Xrw-FW-DKP"/>
+                                    <constraint firstAttribute="height" constant="40" id="gdI-MO-Vsa"/>
+                                </constraints>
+                                <state key="normal" title="模拟支付">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="e9o-2c-Gtz" firstAttribute="centerY" secondItem="kqN-sd-Etm" secondAttribute="centerY" id="5nV-ZH-pZb"/>
+                            <constraint firstItem="9CQ-ig-vH1" firstAttribute="centerX" secondItem="kqN-sd-Etm" secondAttribute="centerX" id="bCc-M7-gET"/>
+                            <constraint firstItem="9CQ-ig-vH1" firstAttribute="top" secondItem="e9o-2c-Gtz" secondAttribute="bottom" constant="27" id="rGG-1h-LLh"/>
+                            <constraint firstItem="e9o-2c-Gtz" firstAttribute="centerX" secondItem="kqN-sd-Etm" secondAttribute="centerX" id="zxS-E2-C8I"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kqN-sd-Etm"/>
+                    </view>
+                    <connections>
+                        <outlet property="btnLogin" destination="e9o-2c-Gtz" id="TTn-AB-uoL"/>
+                        <outlet property="btnPay" destination="9CQ-ig-vH1" id="qX1-4p-gxb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IGW-P1-QJ3" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="118.29085457271366"/>
+        </scene>
+    </scenes>
+</document>
