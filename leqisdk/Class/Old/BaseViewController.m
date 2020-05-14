@@ -30,12 +30,11 @@
     self.popupController.containerView.backgroundColor = [UIColor whiteColor];
     self.popupController.topViewController.view.backgroundColor = [UIColor whiteColor];
     self.popupController.containerView.layer.cornerRadius = 4;
-//    self.popupController.topViewController.view.layer.borderColor = [[[UIColor blackColor] colorWithAlphaComponent:0.3] CGColor];
-//    self.popupController.topViewController.view.layer.borderWidth = 10;
+    self.popupController.navigationBar.tintColor = kColorWithHex(0x333333);
     
     [STPopupNavigationBar appearance].translucent = NO;
     [STPopupNavigationBar appearance].barTintColor = [UIColor whiteColor];
-    [STPopupNavigationBar appearance].tintColor = kColorWithHex(0x000000);
+    [STPopupNavigationBar appearance].tintColor = kColorWithHex(0x333333);
     [STPopupNavigationBar appearance].clipsToBounds = YES;
     [STPopupNavigationBar appearance].titleTextAttributes = @{ NSFontAttributeName: [UIFont fontWithName:@"Cochin" size:16], NSForegroundColorAttributeName:  kColorWithHex(0x000000) };
     self.popupController.navigationBar.draggable = NO;

@@ -116,11 +116,6 @@ static LeqiSDK* instance = nil;
 
     HomeViewController *vc = [[HomeViewController alloc] initWithStoryboardID:@"HomeViewController"];
     STPopupController *popupController = [[STPopupController alloc] initWithRootViewController:vc];
-    popupController.navigationBar.tintColor = kColorWithHex(0xffffff);
-    popupController.navigationBar.titleTextAttributes = @{ NSFontAttributeName: [UIFont fontWithName:@"Cochin" size:16], NSForegroundColorAttributeName:  kColorWithHex(0x000000) };
-//    popupController.containerView.layer.cornerRadius = 4;
-//    popupController.containerView.layer.borderColor = [[UIColor colorWithRed:0 green:0 blue:0 alpha:0.3] CGColor];
-//    popupController.containerView.layer.borderWidth = 10;
     [popupController presentInViewController:[BaseViewController  getCurrentViewController]];
 }
 
@@ -149,8 +144,6 @@ static LeqiSDK* instance = nil;
             
             HomeViewController *vc = [[HomeViewController alloc] initWithStoryboardID:@"HomeViewController"];
             STPopupController *popupController = [[STPopupController alloc] initWithRootViewController:vc];
-            popupController.navigationBar.tintColor = kColorWithHex(0xffffff);
-            popupController.navigationBar.titleTextAttributes = @{ NSFontAttributeName: [UIFont fontWithName:@"Cochin" size:16], NSForegroundColorAttributeName:  kColorWithHex(0x000000) };
             [popupController presentInViewController:[BaseViewController  getCurrentViewController]];
            
             AutoLoginViewController *vc2 = [[AutoLoginViewController alloc] initWithStoryboardID:@"AutoLoginViewController"];
@@ -179,11 +172,6 @@ static LeqiSDK* instance = nil;
 - (void)openNormalLogin {
     HomeViewController *vc = [[HomeViewController alloc] initWithStoryboardID:@"HomeViewController"];
     STPopupController *popupController = [[STPopupController alloc] initWithRootViewController:vc];
-    popupController.navigationBar.tintColor = kColorWithHex(0xffffff);
-    popupController.navigationBar.titleTextAttributes = @{ NSFontAttributeName: [UIFont fontWithName:@"Cochin" size:16], NSForegroundColorAttributeName:  kColorWithHex(0x000000) };
-//    popupController.containerView.layer.cornerRadius = 4;
-//    popupController.containerView.layer.borderColor = [[UIColor colorWithRed:0 green:0 blue:0 alpha:0.3] CGColor];
-//    popupController.containerView.layer.borderWidth = 10;
     [popupController presentInViewController:[BaseViewController  getCurrentViewController]];
 }
 
@@ -447,8 +435,10 @@ static LeqiSDK* instance = nil;
 
 #pragma mark -- alert
 - (void)alert:(NSString *)message {
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:message message:@"" delegate:self cancelButtonTitle:@"关闭" otherButtonTitles:nil, nil];
-    [alert show];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:message message:@"" delegate:self cancelButtonTitle:@"关闭" otherButtonTitles:nil, nil];
+        [alert show];
+    });
 }
 
 - (void)alertByfail:(NSString *)message {

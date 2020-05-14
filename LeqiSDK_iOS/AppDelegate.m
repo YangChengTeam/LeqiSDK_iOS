@@ -40,6 +40,7 @@
 
 - (void)leqiInitResult:(NSNotification *)notify {
     NSLog(@"SDK初始化：%@", notify);
+    [[LeqiSDK shareInstance] login];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
