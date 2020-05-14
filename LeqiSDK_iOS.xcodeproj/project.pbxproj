@@ -196,6 +196,9 @@
 		45D0964C231F63F3004B539C /* MeBindPhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D0964A231F63F3004B539C /* MeBindPhoneViewController.m */; };
 		45D0964F231F6405004B539C /* MeAuthViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 45D0964D231F6405004B539C /* MeAuthViewController.h */; };
 		45D09650231F6405004B539C /* MeAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D0964E231F6405004B539C /* MeAuthViewController.m */; };
+		7B135A8F246CD19300D9F0E2 /* GDTAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B135A8C246CD19300D9F0E2 /* GDTAction.h */; };
+		7B135A90246CD19300D9F0E2 /* GDTAction+convenience.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B135A8D246CD19300D9F0E2 /* GDTAction+convenience.h */; };
+		7B135A91246CD19300D9F0E2 /* LibGDTActionSDK-1.1.3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B135A8E246CD19300D9F0E2 /* LibGDTActionSDK-1.1.3.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -392,6 +395,9 @@
 		45D0964A231F63F3004B539C /* MeBindPhoneViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeBindPhoneViewController.m; sourceTree = "<group>"; };
 		45D0964D231F6405004B539C /* MeAuthViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeAuthViewController.h; sourceTree = "<group>"; };
 		45D0964E231F6405004B539C /* MeAuthViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeAuthViewController.m; sourceTree = "<group>"; };
+		7B135A8C246CD19300D9F0E2 /* GDTAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTAction.h; sourceTree = "<group>"; };
+		7B135A8D246CD19300D9F0E2 /* GDTAction+convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GDTAction+convenience.h"; sourceTree = "<group>"; };
+		7B135A8E246CD19300D9F0E2 /* LibGDTActionSDK-1.1.3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "LibGDTActionSDK-1.1.3.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -410,6 +416,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B135A91246CD19300D9F0E2 /* LibGDTActionSDK-1.1.3.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,6 +514,7 @@
 				4556C297231F474800FD5F26 /* IAPManager.h */,
 				4556C30B231F4D6700FD5F26 /* UIView+MBIBnspectable.h */,
 				4556C30A231F4D6700FD5F26 /* UIView+MBIBnspectable.m */,
+				7B135A8B246CD19300D9F0E2 /* GDT */,
 				4556C28C231F474800FD5F26 /* FloatingWindowPlugin */,
 				4556C298231F474800FD5F26 /* Hub */,
 				4556C27C231F474800FD5F26 /* STPopup */,
@@ -742,6 +750,16 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		7B135A8B246CD19300D9F0E2 /* GDT */ = {
+			isa = PBXGroup;
+			children = (
+				7B135A8C246CD19300D9F0E2 /* GDTAction.h */,
+				7B135A8D246CD19300D9F0E2 /* GDTAction+convenience.h */,
+				7B135A8E246CD19300D9F0E2 /* LibGDTActionSDK-1.1.3.a */,
+			);
+			path = GDT;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -753,6 +771,8 @@
 				4556C2F3231F47CF00FD5F26 /* QQViewController.h in Headers */,
 				45C158A22339AEF60073AF90 /* LeqiSDK.h in Headers */,
 				4556C2E1231F47CF00FD5F26 /* BaseViewController.h in Headers */,
+				7B135A90246CD19300D9F0E2 /* GDTAction+convenience.h in Headers */,
+				7B135A8F246CD19300D9F0E2 /* GDTAction.h in Headers */,
 				456CA1DD232F681D00530975 /* CustomerServerViewController.h in Headers */,
 				45D0963F231F634F004B539C /* MsgRegistViewController.h in Headers */,
 				4556C1E5231F430700FD5F26 /* AFNetworking.h in Headers */,
@@ -1278,6 +1298,11 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/leqisdk/Fondation/GDT",
+				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yangcheng.leqisdk;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1306,6 +1331,11 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/leqisdk/Fondation/GDT",
+				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yangcheng.leqisdk;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

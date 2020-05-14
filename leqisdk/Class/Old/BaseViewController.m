@@ -9,6 +9,8 @@
 #import "BaseViewController.h"
 #import "QQViewController.h"
 #import "Reg2LoginViewController.h"
+#import "GDTAction.h"
+#import "GDTAction+convenience.h"
 
 @interface BaseViewController ()
 
@@ -248,6 +250,10 @@ NSArray *allSubviews(UIView *aView) {
             return;
         }
         if([res[@"code"] integerValue] == 1 && res[@"data"]){
+            // 正常登录
+            NSLog(@"%@:GDT 登录 YES", TAG);
+            [GDTAction reportLoginActionWithMethod:@"normal" isSuccess:YES];
+            
             NSMutableDictionary *user = [[NSMutableDictionary alloc] initWithDictionary:res[@"data"]];
             int mainkey = 1;
             if([[user objectForKey:@"is_vali_mobile"] intValue] == 1 && [[user objectForKey:@"mobile"] isEqualToString:account]){
@@ -264,10 +270,14 @@ NSArray *allSubviews(UIView *aView) {
             [weakSelf.popupController dismiss];
             [[LeqiSDK shareInstance] showFloatView];
         } else {
+            NSLog(@"%@:GDT 登录 NO", TAG);
+            [GDTAction reportLoginActionWithMethod:@"normal" isSuccess:NO];
             [weakSelf alertByfail:res[@"msg"]];
             [[NSNotificationCenter defaultCenter] postNotificationName:kLeqiSDKNotiLogin object:nil];
         }
     } error:^(NSError * error) {
+        NSLog(@"%@:GDT 登录 NO", TAG);
+        [GDTAction reportLoginActionWithMethod:@"normal" isSuccess:NO];
         [weakSelf showByError:error];
         if(!error){
             [[NSNotificationCenter defaultCenter] postNotificationName:kLeqiSDKNotiLogin object:nil];
@@ -288,6 +298,8 @@ NSArray *allSubviews(UIView *aView) {
             return;
         }
         if([res[@"code"] integerValue] == 1 && res[@"data"]){
+            NSLog(@"%@:GDT 注册 YES", TAG);
+            [GDTAction reportRegisterActionWithMethod:@"normal" isSuccess:YES];
             NSMutableDictionary *user = [[NSMutableDictionary alloc] initWithDictionary:res[@"data"]];
             [[CacheHelper shareInstance] setUser:user mainKey:1];
             Reg2LoginViewController *reg2LoginViewController = [Reg2LoginViewController new];
@@ -296,9 +308,13 @@ NSArray *allSubviews(UIView *aView) {
                 callback();
             }
         } else {
+            NSLog(@"%@:GDT 注册 NO", TAG);
+            [GDTAction reportRegisterActionWithMethod:@"normal" isSuccess:NO];
             [weakSelf alertByfail:res[@"msg"]];
         }
     } error:^(NSError * error) {
+        NSLog(@"%@:GDT 注册 NO", TAG);
+        [GDTAction reportRegisterActionWithMethod:@"normal" isSuccess:NO];
         [weakSelf showByError:error];
     }];
 }

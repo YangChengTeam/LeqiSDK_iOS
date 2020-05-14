@@ -109,19 +109,21 @@
         
     } completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
         if(error){
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"无法连接服务器,请重试" message:@"" delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-            [alertView showAlertViewWithCompleteBlock:^(NSInteger buttonIndex) {
-                if(buttonIndex == 1){
-                    if(errorcallback){
-                        errorcallback(error);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"无法连接服务器,请重试" message:@"" delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+                [alertView showAlertViewWithCompleteBlock:^(NSInteger buttonIndex) {
+                    if(buttonIndex == 1){
+                        if(errorcallback){
+                            errorcallback(error);
+                        }
+                        [NetUtils postWithUrl:url params:data callback:finishcallback error: errorcallback];
+                    } else {
+                        if(errorcallback){
+                            errorcallback(nil);
+                        }
                     }
-                    [NetUtils postWithUrl:url params:data callback:finishcallback error: errorcallback];
-                } else {
-                    if(errorcallback){
-                        errorcallback(nil);
-                    }
-                }
-            }]; 
+                }];
+            });
             return;
         }
         NSData *jsonData = nil;

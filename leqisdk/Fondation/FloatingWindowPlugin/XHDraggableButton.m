@@ -13,6 +13,7 @@
 
 
 
+
 @interface XHDraggableButton()
 
 @property (nonatomic, assign)CGPoint touchStartPosition;
@@ -21,6 +22,7 @@
 
 @implementation XHDraggableButton {
     BOOL isHalf;
+    BOOL isFirstShow;
 }
 
 
@@ -67,26 +69,55 @@
     }
 }
 
+
 - (void)animateHalf {
     if(isHalf) return;
+    
+    CGFloat l = 0;
+    CGFloat r = 0;
+    CGFloat t = 0;
+    CGFloat b = 0;
+    
+    if(@available(iOS 11.0, *)) {
+        UIInterfaceOrientation deviceOrientation = [UIApplication sharedApplication].statusBarOrientation;
+        if(deviceOrientation ==  UIInterfaceOrientationLandscapeRight){
+            l = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.left;
+            NSLog(@"leqisdk: left-%f", l);
+        } else if(deviceOrientation ==  UIInterfaceOrientationLandscapeLeft){
+            r = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.right;
+            NSLog(@"leqisdk: right-%f", r);
+        } else {
+            t = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.top;
+            NSLog(@"leqisdk: top-%f", t);
+        }
+    }
+    
+    CGFloat leftY = self.superview.frame.origin.y;
+    if(!isFirstShow){
+        isFirstShow = YES;
+        leftY = [UIScreen mainScreen].bounds.size.height / 2 - floatWindowSize / 2;
+    }
+    
+    
     [UIView animateWithDuration:0.3 delay:0.5 options:UIViewAnimationOptionCurveLinear animations:^{
         self.superview.alpha = 0.6;
     } completion:^(BOOL finished) {
         switch (_minDir) {
             case xh_FloatWindowLEFT: {
-                self.superview.frame =  CGRectMake(-floatWindowSize/2, self.superview.frame.origin.y, floatWindowSize, floatWindowSize);
+                NSLog(@"leqisdk: float-view-(%f,%f)" , -floatWindowSize/2 + l, leftY);
+                self.superview.frame =  CGRectMake(-floatWindowSize/2 + l*0.75, leftY, floatWindowSize, floatWindowSize);
                 break;
             }
             case xh_FloatWindowRIGHT: {
-                self.superview.frame =  CGRectMake(xh_ScreenW - floatWindowSize/2, self.superview.frame.origin.y, floatWindowSize, floatWindowSize);
+                self.superview.frame =  CGRectMake(xh_ScreenW - floatWindowSize/2 - r*0.75, self.superview.frame.origin.y, floatWindowSize, floatWindowSize);
                 break;
             }
             case xh_FloatWindowTOP: {
-                self.superview.frame =  CGRectMake(self.superview.frame.origin.x, -floatWindowSize/2, floatWindowSize, floatWindowSize);
+                self.superview.frame =  CGRectMake(self.superview.frame.origin.x, -floatWindowSize/2 + t*0.75, floatWindowSize, floatWindowSize);
                 break;
             }
             case xh_FloatWindowBOTTOM: {
-                self.superview.frame =  CGRectMake(self.superview.frame.origin.x, xh_ScreenH - floatWindowSize/2, floatWindowSize, floatWindowSize);
+                self.superview.frame =  CGRectMake(self.superview.frame.origin.x, xh_ScreenH - floatWindowSize/2 - b*0.75, floatWindowSize, floatWindowSize);
                 break;
             }
             default:
@@ -105,7 +136,7 @@
         [self.buttonDelegate dragButtonClicked:self];
         return;
     }
-
+    
     UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
     CGFloat W = xh_ScreenW;
     CGFloat H = xh_ScreenH;
@@ -116,6 +147,25 @@
         H = xh_ScreenW;
     }
     // distances to the four screen edges
+    CGFloat l = 0;
+    CGFloat r = 0;
+    CGFloat t = 0;
+    CGFloat b = 0;
+    if(@available(iOS 11.0, *)) {
+        UIInterfaceOrientation deviceOrientation = [UIApplication sharedApplication].statusBarOrientation;
+        if(deviceOrientation ==  UIInterfaceOrientationLandscapeRight){
+            l = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.left;
+            NSLog(@"leqisdk: left-%f", l);
+        } else if(deviceOrientation ==  UIInterfaceOrientationLandscapeLeft){
+            r = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.right;
+            NSLog(@"leqisdk: right-%f", r);
+        } else {
+            t = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.top;
+            NSLog(@"leqisdk: top-%f", t);
+        }
+    }
+    
+    
     CGFloat left = curPoint.x;
     CGFloat right = W - curPoint.x;
     CGFloat top = curPoint.y;
@@ -138,7 +188,7 @@
     switch (_minDir) {
         case xh_FloatWindowLEFT: {
             [UIView animateWithDuration:0.3 animations:^{
-                self.superview.center = CGPointMake(self.superview.frame.size.width/2, self.superview.center.y);
+                self.superview.center = CGPointMake(self.superview.frame.size.width/2 + l*0.75, self.superview.center.y);
             } completion:^(BOOL finished) {
                 [self animateHalf];
             }];
@@ -146,7 +196,7 @@
         }
         case xh_FloatWindowRIGHT: {
             [UIView animateWithDuration:0.3 animations:^{
-                self.superview.center = CGPointMake(W - self.superview.frame.size.width/2, self.superview.center.y);
+                self.superview.center = CGPointMake(W - self.superview.frame.size.width/2 - r*0.75, self.superview.center.y);
             } completion:^(BOOL finished) {
                 [self animateHalf];
             }];
@@ -154,7 +204,7 @@
         }
         case xh_FloatWindowTOP: {
             [UIView animateWithDuration:0.3 animations:^{
-                self.superview.center = CGPointMake(self.superview.center.x, self.superview.frame.size.height/2);
+                self.superview.center = CGPointMake(self.superview.center.x, self.superview.frame.size.height/2 + t*0.75);
             } completion:^(BOOL finished) {
                 [self animateHalf];
             }];
@@ -162,7 +212,7 @@
         }
         case xh_FloatWindowBOTTOM: {
             [UIView animateWithDuration:0.3 animations:^{
-                self.superview.center = CGPointMake(self.superview.center.x, H - self.superview.frame.size.height/2);
+                self.superview.center = CGPointMake(self.superview.center.x, H - self.superview.frame.size.height/2 - b*0.75);
             } completion:^(BOOL finished) {
                 [self animateHalf];
             }];

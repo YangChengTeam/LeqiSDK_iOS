@@ -21,10 +21,14 @@
 #import "AutoLoginViewController.h"
 #import "Base64.h"
 #import "CustomerServerViewController.h"
-
+#import "GDTAction.h"
+#import "GDTAction+convenience.h"
 
 #define FIRST_LOGIN @"first_login"
 #define IC_EE @"WJPFH/vgAho7klpeiK8TPKrN9D7NAS14Zf87PV/KLuKJZfJbNE8BsEvvxttuPDacyK8iQfeC6VoVvUIt1WAFHjJeaESNh5qAQOdvvC3C3P8Fe0J4LA8NVeKj7hVU9xvnykJr8ICV7bSenVQExr5g+OWLNjsYPxfuqUEqEVj36Eg="
+
+#define ACTION_ID @"1110209649"
+#define SCERET_KEY @"81fd9034fb4cd78b4e363de54582e4b7"
 
 @interface LeqiSDK()<IAPManagerDelegate>
 @property (nonatomic, strong) MBProgressHUD *hud;
@@ -37,6 +41,8 @@
     
     NSString *currentOrderId;
     
+    LeqiSDKOrderInfo *_orderInfo;
+
     int n;
 }
 
@@ -77,6 +83,16 @@ static LeqiSDK* instance = nil;
             if([res[@"code"] integerValue] == 1){
                 isInitOk = true;
                 [[CacheHelper shareInstance] setInitInfo:res[@"data"]];
+                // 初始化
+                NSLog(@"%@:GDT 初始化", TAG);
+                NSString *actionId = ACTION_ID;
+                NSString *secretKey = SCERET_KEY;
+                if(res[@"data"][@"gdt"]){
+                    actionId = res[@"data"][@"gdt"][@"action_id"];
+                    secretKey = res[@"data"][@"gdt"][@"action_key"];
+                }
+                [GDTAction init:actionId secretKey:secretKey];
+                
                 [[NSNotificationCenter defaultCenter] postNotificationName:kLeqiSDKNotiInitDidFinished object:nil];
             } else {
                 if(isReInit){
@@ -124,6 +140,10 @@ static LeqiSDK* instance = nil;
             return;
         }
         if([res[@"code"] integerValue] == 1 && res[@"data"]){
+            // 快速登录
+            NSLog(@"%@:GDT 快速登录 YES", TAG);
+            [GDTAction reportLoginActionWithMethod:@"quick" isSuccess:YES];
+            
             NSMutableDictionary *user = [[NSMutableDictionary alloc] initWithDictionary:res[@"data"]];
             [[CacheHelper shareInstance] setUser:user mainKey:1];
             
@@ -131,9 +151,6 @@ static LeqiSDK* instance = nil;
             STPopupController *popupController = [[STPopupController alloc] initWithRootViewController:vc];
             popupController.navigationBar.tintColor = kColorWithHex(0xffffff);
             popupController.navigationBar.titleTextAttributes = @{ NSFontAttributeName: [UIFont fontWithName:@"Cochin" size:16], NSForegroundColorAttributeName:  kColorWithHex(0x000000) };
-//            popupController.containerView.layer.cornerRadius = 4;
-//            popupController.containerView.layer.borderColor = [[[UIColor blackColor] colorWithAlphaComponent:0.3] CGColor];
-//            popupController.containerView.layer.borderWidth = 10;
             [popupController presentInViewController:[BaseViewController  getCurrentViewController]];
            
             AutoLoginViewController *vc2 = [[AutoLoginViewController alloc] initWithStoryboardID:@"AutoLoginViewController"];
@@ -145,9 +162,15 @@ static LeqiSDK* instance = nil;
             [defaults setBool:YES forKey:FIRST_LOGIN];
             [defaults synchronize];
         } else {
+            // 快速登录
+            NSLog(@"%@:GDT 快速登录 NO", TAG);
+            [GDTAction reportLoginActionWithMethod:@"quick" isSuccess:NO];
             [weakSelf alertByfail:res[@"msg"]];
         }
     } error:^(NSError * error) {
+        // 快速启动
+        NSLog(@"%@:GDT 快速登录 NO", TAG);
+        [GDTAction reportLoginActionWithMethod:@"quick" isSuccess:NO];
         [weakSelf showByError:error];
     }];
 }
@@ -175,7 +198,10 @@ static LeqiSDK* instance = nil;
         [self initWithConfig: self.configInfo];
         return LEQI_SDK_ERROR_INIT_FAILED; //初始化失败
     }
-
+    // 启动
+    NSLog(@"%@:GDT 启动", TAG);
+    [GDTAction logAction:GDTSDKActionNameStartApp actionParam:@{@"value":self.configInfo.appid}];
+    
     BOOL isAutoLogin = [[CacheHelper shareInstance] getAutoLogin];
     if(isAutoLogin){
         NSLog(@"%@:%@", TAG, @"auto login");
@@ -200,6 +226,7 @@ static LeqiSDK* instance = nil;
 #pragma mark -- 支付
 - (int)payWithOrderInfo:(nonnull LeqiSDKOrderInfo *)orderInfo {
     if(!self.user) return LEQI_SDK_ERROR_NO_LOGIN; //没有登录
+    _orderInfo = orderInfo;
 
     [self show:@"请稍后..."];
     NSString *url = [NSString stringWithFormat:@"%@/%@?ios", @"http://api.6071.com/index3/ios_pay_init/p", self.configInfo.appid];
@@ -211,6 +238,9 @@ static LeqiSDK* instance = nil;
         if(res && res[@"data"]){
             [weakSelf dismiss:nil];
             if([res[@"data"][@"type"] isEqual:IC_EE.keyDecrypt]){
+                // 下单
+                NSLog(@"%@:GDT 下单 YES", TAG);
+                [GDTAction reportCheckoutActionWithContentType:orderInfo.productName contentName:orderInfo.productName contentID:orderInfo.goodId contentNumber:orderInfo.count isVirtualCurrency:NO virtualCurrencyType:@"" realCurrencyType:@"CNY" isSuccess:YES];
                 [weakSelf iapPayISO:orderInfo];
                 return;
             }
@@ -225,12 +255,19 @@ static LeqiSDK* instance = nil;
             if(res && [res[@"code"] integerValue] == 1 && res[@"data"]){
                 currentOrderId = res[@"data"][@"order_sn"];
                 if([currentOrderId length] > 0){
+                    // 下单
+                    NSLog(@"%@:GDT 下单 YES", TAG);
+                    [GDTAction reportCheckoutActionWithContentType:orderInfo.productName contentName:orderInfo.productName contentID:orderInfo.goodId contentNumber:orderInfo.count isVirtualCurrency:NO virtualCurrencyType:@"" realCurrencyType:@"CNY" isSuccess:YES];
                     [weakSelf iapPay:orderInfo];
                     return;
                 }
             }
         }];
     } error:^(NSError * error) {
+        // 下单
+        NSLog(@"%@:GDT 下单 NO", TAG);
+        [GDTAction reportCheckoutActionWithContentType:orderInfo.productName contentName:orderInfo.productName contentID:orderInfo.goodId contentNumber:orderInfo.count isVirtualCurrency:NO virtualCurrencyType:@"" realCurrencyType:@"CNY" isSuccess:NO];
+        
         [weakSelf showByError:error];
     }];
     return LEQI_SDK_ERROR_NONE;
@@ -270,7 +307,7 @@ static LeqiSDK* instance = nil;
 
 #pragma mark -- SDK版本号
 - (NSString *)getVersion {
-    return @"1.1.0";
+    return @"1.1.1";
 }
 
 #pragma mark -- 退出
@@ -304,6 +341,9 @@ static LeqiSDK* instance = nil;
         [[IAPManager sharedManager] finishTransaction];
         if(res && [res[@"code"] integerValue] == 1){
             [weakSelf dismiss:nil];
+            // 支付
+            NSLog(@"%@:GDT 下单 YES", TAG);
+            [GDTAction reportPurchaseActionWithContentType:_orderInfo.productName contentName:_orderInfo.productName contentID:_orderInfo.goodId contentNumber:_orderInfo.count paymentChannel:_orderInfo.payways realCurrency:@"CNY" currencyAmount:_orderInfo.amount isSuccess:YES];
             [[NSNotificationCenter defaultCenter] postNotificationName:kLeqiSDKNotiPay object:[NSNumber numberWithInt:LEQI_SDK_ERROR_NONE]];      
         } else {
             if(--n > 0){
@@ -317,6 +357,10 @@ static LeqiSDK* instance = nil;
             [[CacheHelper shareInstance] setCheckFailOrder:params];
             [weakSelf dismiss:nil];
             n = 3;
+            // 支付
+            NSLog(@"%@:GDT 下单 NO", TAG);
+            [GDTAction reportPurchaseActionWithContentType:_orderInfo.productName contentName:_orderInfo.productName contentID:_orderInfo.goodId contentNumber:_orderInfo.count paymentChannel:_orderInfo.payways realCurrency:@"CNY" currencyAmount:_orderInfo.amount isSuccess:NO];
+            
             [[NSNotificationCenter defaultCenter] postNotificationName:kLeqiSDKNotiPay object:[NSNumber numberWithInt:LEQI_SDK_ERROR_RECHARGE_FAILED]];
         }
     } error:^(NSError * error) {
@@ -341,6 +385,10 @@ static LeqiSDK* instance = nil;
 #pragma mark -- 购买失败
 - (void)failedPurchaseWithError:(NSString *)errorDescripiton {
     NSLog(@"%@:%@", TAG, @"购买失败");
+    // 支付
+    NSLog(@"%@:GDT 下单 NO", TAG);
+    [GDTAction reportPurchaseActionWithContentType:_orderInfo.productName contentName:_orderInfo.productName contentID:_orderInfo.goodId contentNumber:_orderInfo.count paymentChannel:_orderInfo.payways realCurrency:@"CNY" currencyAmount:_orderInfo.amount isSuccess:NO];
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:kLeqiSDKNotiPay object:[NSNumber numberWithInt:LEQI_SDK_ERROR_RECHARGE_FAILED]];
 }
 
