@@ -47,7 +47,7 @@
 
 - (IBAction)payAction {
     LeqiSDKOrderInfo *orderInfo = [LeqiSDKOrderInfo new];
-    orderInfo.goodId = @"com.leqi.bxxyios.rbm30";
+    orderInfo.goodId = @"leqi.zxsynew12";
     orderInfo.productName = @"阴阳师:640枚勾玉";
     orderInfo.amount = 0.02;
     orderInfo.count = 1;

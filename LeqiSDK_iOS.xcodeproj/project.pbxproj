@@ -169,7 +169,6 @@
 		4556C314231F510C00FD5F26 /* MeNavViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4556C312231F510C00FD5F26 /* MeNavViewController.h */; };
 		4556C315231F510C00FD5F26 /* MeNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4556C313231F510C00FD5F26 /* MeNavViewController.m */; };
 		4556C318231F547800FD5F26 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4556C317231F547800FD5F26 /* QuartzCore.framework */; };
-		4556C31A231F547F00FD5F26 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4556C319231F547F00FD5F26 /* StoreKit.framework */; };
 		4556C31C231F549800FD5F26 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4556C31B231F549800FD5F26 /* libsqlite3.tbd */; };
 		4556C31F231F5B3D00FD5F26 /* UserCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 4556C31D231F5B3D00FD5F26 /* UserCell.h */; };
 		4556C320231F5B3D00FD5F26 /* UserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4556C31E231F5B3D00FD5F26 /* UserCell.m */; };
@@ -199,6 +198,7 @@
 		7B135A8F246CD19300D9F0E2 /* GDTAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B135A8C246CD19300D9F0E2 /* GDTAction.h */; };
 		7B135A90246CD19300D9F0E2 /* GDTAction+convenience.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B135A8D246CD19300D9F0E2 /* GDTAction+convenience.h */; };
 		7B135A91246CD19300D9F0E2 /* LibGDTActionSDK-1.1.3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B135A8E246CD19300D9F0E2 /* LibGDTActionSDK-1.1.3.a */; };
+		7BE063B0258AE8AA00AEDE30 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BE063AF258AE8AA00AEDE30 /* StoreKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -369,7 +369,6 @@
 		4556C312231F510C00FD5F26 /* MeNavViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeNavViewController.h; sourceTree = "<group>"; };
 		4556C313231F510C00FD5F26 /* MeNavViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeNavViewController.m; sourceTree = "<group>"; };
 		4556C317231F547800FD5F26 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		4556C319231F547F00FD5F26 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		4556C31B231F549800FD5F26 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		4556C31D231F5B3D00FD5F26 /* UserCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserCell.h; sourceTree = "<group>"; };
 		4556C31E231F5B3D00FD5F26 /* UserCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserCell.m; sourceTree = "<group>"; };
@@ -398,6 +397,7 @@
 		7B135A8C246CD19300D9F0E2 /* GDTAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTAction.h; sourceTree = "<group>"; };
 		7B135A8D246CD19300D9F0E2 /* GDTAction+convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GDTAction+convenience.h"; sourceTree = "<group>"; };
 		7B135A8E246CD19300D9F0E2 /* LibGDTActionSDK-1.1.3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "LibGDTActionSDK-1.1.3.a"; sourceTree = "<group>"; };
+		7BE063AF258AE8AA00AEDE30 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -406,9 +406,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4556C31C231F549800FD5F26 /* libsqlite3.tbd in Frameworks */,
-				4556C31A231F547F00FD5F26 /* StoreKit.framework in Frameworks */,
 				4556C318231F547800FD5F26 /* QuartzCore.framework in Frameworks */,
 				4556C192231F3E0000FD5F26 /* leqisdk.framework in Frameworks */,
+				7BE063B0258AE8AA00AEDE30 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -732,8 +732,8 @@
 		4556C316231F547800FD5F26 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7BE063AF258AE8AA00AEDE30 /* StoreKit.framework */,
 				4556C31B231F549800FD5F26 /* libsqlite3.tbd */,
-				4556C319231F547F00FD5F26 /* StoreKit.framework */,
 				4556C317231F547800FD5F26 /* QuartzCore.framework */,
 			);
 			name = Frameworks;
@@ -1245,8 +1245,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HJQQYZ4D7S;
+				DEVELOPMENT_TEAM = 8TG78U3K8J;
 				INFOPLIST_FILE = LeqiSDK_iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1254,8 +1255,9 @@
 					"@executable_path/Frameworks",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.touming.LeqiSDK;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zhangshuyan.zhuxianshenyu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1264,8 +1266,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HJQQYZ4D7S;
+				DEVELOPMENT_TEAM = 8TG78U3K8J;
 				INFOPLIST_FILE = LeqiSDK_iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1273,8 +1276,9 @@
 					"@executable_path/Frameworks",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.touming.LeqiSDK;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zhangshuyan.zhuxianshenyu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

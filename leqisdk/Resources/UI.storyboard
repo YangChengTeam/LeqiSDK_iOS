@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zwy-tL-ahz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zwy-tL-ahz">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -215,6 +215,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="7mh-Qs-deo"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="pxq-zc-j1b" firstAttribute="leading" secondItem="op6-66-yMt" secondAttribute="trailing" constant="20" id="0H5-xQ-mX3"/>
@@ -231,7 +232,6 @@
                             <constraint firstItem="gqO-Kz-43J" firstAttribute="leading" secondItem="7mh-Qs-deo" secondAttribute="leading" constant="35" id="mcd-mV-qag"/>
                             <constraint firstItem="pxq-zc-j1b" firstAttribute="top" secondItem="Ynq-TJ-EKZ" secondAttribute="bottom" constant="20" id="qKj-uR-t8g"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="7mh-Qs-deo"/>
                     </view>
                     <connections>
                         <outlet property="downBt" destination="j9a-6O-Oym" id="1KW-6i-pr4"/>
@@ -348,6 +348,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="CFY-VS-7ZS"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="meL-RX-7JS" firstAttribute="top" secondItem="UYi-rS-8Fr" secondAttribute="bottom" constant="15" id="CVX-29-iyq"/>
@@ -363,7 +364,6 @@
                             <constraint firstItem="CFY-VS-7ZS" firstAttribute="trailing" secondItem="UYi-rS-8Fr" secondAttribute="trailing" constant="20" id="mxt-xJ-SGe"/>
                             <constraint firstItem="Mn1-Qf-SB6" firstAttribute="leading" secondItem="HNk-PH-hDv" secondAttribute="leading" constant="20" id="xDM-oT-lnm"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="CFY-VS-7ZS"/>
                     </view>
                     <connections>
                         <outlet property="codeBt" destination="meL-RX-7JS" id="GQN-xp-JfU"/>
@@ -545,6 +545,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="D7J-R2-gN2"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ENn-TI-8R9" firstAttribute="top" secondItem="MiW-yv-JMy" secondAttribute="bottom" constant="15" id="2sK-Hc-BtF"/>
@@ -565,13 +566,13 @@
                             <constraint firstItem="MiW-yv-JMy" firstAttribute="top" secondItem="04o-KQ-QpU" secondAttribute="bottom" constant="15" id="wTn-ME-nCa"/>
                             <constraint firstItem="04o-KQ-QpU" firstAttribute="top" secondItem="D7J-R2-gN2" secondAttribute="top" constant="10" id="xwp-nU-JQd"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="D7J-R2-gN2"/>
                     </view>
                     <connections>
                         <outlet property="codeBt" destination="TJZ-aq-oDv" id="3z9-3l-z6y"/>
                         <outlet property="codeField" destination="LNN-Js-drO" id="ODz-RJ-dgW"/>
                         <outlet property="loginBt" destination="CNr-5o-iYz" id="x2J-zp-Cno"/>
                         <outlet property="phoneField" destination="ooT-uq-bhc" id="9an-dv-rcv"/>
+                        <outlet property="pwdField" destination="4ro-6W-vi3" id="Wby-va-xVy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ul5-vo-ths" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -698,6 +699,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Et7-q5-Rga"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Et7-q5-Rga" firstAttribute="trailing" secondItem="QzW-af-7e6" secondAttribute="trailing" constant="35" id="2Z0-0l-a2j"/>
@@ -716,7 +718,6 @@
                             <constraint firstItem="4Hi-Q2-3qJ" firstAttribute="top" secondItem="Et7-q5-Rga" secondAttribute="top" constant="10" id="xs0-Q5-whA"/>
                             <constraint firstItem="VXM-eZ-98U" firstAttribute="leading" secondItem="g5u-GC-XQ6" secondAttribute="trailing" constant="10" id="zMu-4o-x01"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Et7-q5-Rga"/>
                     </view>
                     <connections>
                         <outlet property="codeBt" destination="VXM-eZ-98U" id="bw5-Po-rRm"/>
@@ -829,6 +830,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="WJf-G7-4CE"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="M8Y-Wr-BuK" firstAttribute="leading" secondItem="WJf-G7-4CE" secondAttribute="leading" constant="35" id="1vJ-6h-YUx"/>
@@ -844,7 +846,6 @@
                             <constraint firstItem="5p7-4m-m7W" firstAttribute="top" secondItem="8XA-JH-NYb" secondAttribute="bottom" constant="15" id="wJy-8T-cEe"/>
                             <constraint firstItem="M8Y-Wr-BuK" firstAttribute="top" secondItem="WW9-vm-JJl" secondAttribute="bottom" constant="10" id="yu5-FI-zIA"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="WJf-G7-4CE"/>
                     </view>
                     <navigationItem key="navigationItem" title="修改密码" id="jgu-wC-iDA">
                         <barButtonItem key="leftBarButtonItem" image="ic_back_gray" id="Urh-pQ-3zu">
@@ -1364,6 +1365,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="G6a-2y-qQh"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Nyr-Za-Uyo" firstAttribute="leading" secondItem="G6a-2y-qQh" secondAttribute="leading" constant="30" id="9Bv-po-ats"/>
@@ -1386,7 +1388,6 @@
                             <constraint firstItem="8Kp-UO-vvP" firstAttribute="top" secondItem="1a1-Mn-LwD" secondAttribute="bottom" priority="250" constant="80" id="wHR-TI-r99"/>
                             <constraint firstItem="1a1-Mn-LwD" firstAttribute="top" secondItem="zBk-jp-Njz" secondAttribute="bottom" constant="30" id="xjG-J4-Ogn"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="G6a-2y-qQh"/>
                     </view>
                     <navigationItem key="navigationItem" title="绑定手机" id="xiG-Og-1Wr">
                         <barButtonItem key="leftBarButtonItem" image="ic_back" id="zub-mY-IQa">
@@ -1525,6 +1526,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="3sO-ir-Ues"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="3sO-ir-Ues" firstAttribute="trailing" secondItem="xxo-fc-ZMP" secondAttribute="trailing" constant="20" id="35H-Cx-nQW"/>
@@ -1544,7 +1546,6 @@
                             <constraint firstItem="2dG-aD-VJt" firstAttribute="top" secondItem="YWj-DJ-j8N" secondAttribute="bottom" priority="250" constant="80" id="tAh-9W-VYN"/>
                             <constraint firstItem="Bce-w3-mJ6" firstAttribute="top" secondItem="xxo-fc-ZMP" secondAttribute="bottom" constant="15" id="vz5-0u-qJN"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="3sO-ir-Ues"/>
                     </view>
                     <navigationItem key="navigationItem" title="实名认证" id="e00-tl-UXO">
                         <barButtonItem key="leftBarButtonItem" image="ic_back" id="pnF-Fn-hEO">
@@ -1671,6 +1672,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="s7l-ui-1xM"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="bmr-Dv-Wx2" firstAttribute="leading" secondItem="s7l-ui-1xM" secondAttribute="leading" constant="20" id="3ay-ix-pv0"/>
@@ -1686,7 +1688,6 @@
                             <constraint firstItem="s7l-ui-1xM" firstAttribute="trailing" secondItem="bmr-Dv-Wx2" secondAttribute="trailing" constant="20" id="rLs-ux-nTw"/>
                             <constraint firstItem="g6L-Sz-AF1" firstAttribute="top" secondItem="Uzk-aF-eHY" secondAttribute="bottom" constant="20" id="vTf-Ax-BFv"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="s7l-ui-1xM"/>
                     </view>
                     <navigationItem key="navigationItem" title="修改密码" id="VoX-vY-YTh">
                         <barButtonItem key="leftBarButtonItem" image="ic_back" id="Pbd-tR-dLJ">
@@ -1876,6 +1877,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="QXb-L9-U3s"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="j5g-dI-qU7" firstAttribute="leading" secondItem="QXb-L9-U3s" secondAttribute="leading" constant="35" id="03R-jt-cHv"/>
@@ -1893,7 +1895,6 @@
                             <constraint firstItem="Ce9-Sk-oga" firstAttribute="leading" secondItem="QXb-L9-U3s" secondAttribute="leading" constant="35" id="gaP-fb-hfb"/>
                             <constraint firstItem="YVE-Kb-tS7" firstAttribute="leading" secondItem="QXb-L9-U3s" secondAttribute="leading" constant="35" id="v10-SY-hXU"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="QXb-L9-U3s"/>
                     </view>
                     <connections>
                         <outlet property="checkboxBt" destination="IlP-t2-H4E" id="BWU-UM-oV3"/>
@@ -1971,6 +1972,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="90F-Ra-RKv"/>
                         <color key="backgroundColor" cyan="0.0" magenta="0.0" yellow="0.0" black="1" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                         <constraints>
                             <constraint firstItem="YWA-9P-fpA" firstAttribute="leading" secondItem="90F-Ra-RKv" secondAttribute="leading" constant="20" id="0ah-u4-2kW"/>
@@ -1978,7 +1980,6 @@
                             <constraint firstItem="90F-Ra-RKv" firstAttribute="bottom" secondItem="YWA-9P-fpA" secondAttribute="bottom" constant="60" id="edp-HV-5Xb"/>
                             <constraint firstItem="90F-Ra-RKv" firstAttribute="trailing" secondItem="YWA-9P-fpA" secondAttribute="trailing" constant="20" id="irA-UX-aNP"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="90F-Ra-RKv"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ojr-Ae-z1v" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2355,6 +2356,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="iDT-tI-2ap"/>
                         <color key="backgroundColor" cyan="0.0" magenta="0.0" yellow="0.0" black="1" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                         <constraints>
                             <constraint firstItem="iDT-tI-2ap" firstAttribute="bottom" secondItem="XM7-GC-RLB" secondAttribute="bottom" constant="60" id="7h0-kR-lJI"/>
@@ -2362,7 +2364,6 @@
                             <constraint firstItem="XM7-GC-RLB" firstAttribute="top" secondItem="iDT-tI-2ap" secondAttribute="top" constant="60" id="c9n-VQ-ZzO"/>
                             <constraint firstItem="iDT-tI-2ap" firstAttribute="trailing" secondItem="XM7-GC-RLB" secondAttribute="trailing" constant="20" id="zxc-lw-f6G"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="iDT-tI-2ap"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="soL-SZ-rfm" userLabel="First Responder" sceneMemberID="firstResponder"/>

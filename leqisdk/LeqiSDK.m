@@ -278,6 +278,7 @@ static LeqiSDK* instance = nil;
 - (void)showFloatView {
     if(!self.user) return;
     if(!isFloatViewAdded){
+        
        [XHFloatWindow xh_addWindowOnTarget:[BaseViewController getCurrentViewController] onClick:^{
 
            CustomerServerViewController *nav = [[CustomerServerViewController alloc] initWithStoryboardID:@"CustomerServerViewController"];
@@ -295,7 +296,7 @@ static LeqiSDK* instance = nil;
 
 #pragma mark -- SDK版本号
 - (NSString *)getVersion {
-    return @"1.1.1";
+    return @"1.1.2";
 }
 
 #pragma mark -- 退出
@@ -307,7 +308,7 @@ static LeqiSDK* instance = nil;
 
 #pragma mark -- 接收内购支付回调
 - (void)receiveProduct:(SKProduct *)product {
-    NSLog(@"%@:%@", TAG, @"接收内购支付回调");
+    NSLog(@"%@:%@ : %@", TAG, @"接收内购支付回调", product);
     [self dismiss:nil];
     if (product != nil) {
         if (![[IAPManager sharedManager] purchaseProduct:product]) {
